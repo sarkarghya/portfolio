@@ -1,0 +1,205 @@
+@import '../../core-ui/_base'
+
+//SIDE MENU
+.navigation
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    background-color: $black-bg
+    height: 100%
+    grid-column: span 1
+
+    .navigation__logo
+        text-decoration: none
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 100%
+        margin-top: 3rem
+        margin-bottom: 3rem
+
+    .logo-text
+        display: flex
+        flex-direction: column
+        align-items: center
+        font-family: $logo-font
+        color: white
+        text-align: center
+        
+    .logo-top
+        font-size: 3rem
+        font-weight: bold
+        letter-spacing: 0px
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.7)
+
+
+        position: relative
+
+        span
+            position: relative
+            z-index: 1
+            display: inline-block
+
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background-color: white
+            z-index: 0
+            opacity: 0
+            // animation: slideOut 1s ease 0.2s forwards
+        
+        &.animate::before
+            opacity: 1
+            animation: slideOutRight 1s ease 0.2s forwards
+
+        &:hover 
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8)
+
+    @keyframes slideOut
+        from
+            width: 100%
+        to
+            width: 0%
+    
+    .logo-bottom
+        font-size: 3rem
+        font-weight: bold
+        letter-spacing: 0px
+        position: relative
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.7)
+
+        span
+            position: relative
+            z-index: 1
+            display: inline-block
+
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            right: 0
+            width: 100%
+            height: 100%
+            background-color: white
+            z-index: 0
+            opacity: 0
+            // animation: slideOutRight 1s ease 0.2s forwards
+
+        &.animate::before
+            opacity: 1
+            animation: slideOutRight 1s ease 0.2s forwards
+        
+        &:hover 
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8)
+
+        @keyframes slideOutRight
+            0%
+                transform: translateX(0)
+                width: 100%
+            100%
+                transform: translateX(50)
+                width: 0
+
+
+    .menu-icon
+        cursor: pointer
+        width: 3.2rem
+        height: 3.2rem
+        position: fixed
+        display: flex
+        flex-direction: row
+        align-items: flex-end
+        top: 3%
+        right: 3%
+        z-index: 100
+    .navigation__menu
+        display: none
+        flex-direction: column
+        gap: 1rem
+        text-align: center
+        width: 100%
+        height: 100%
+        position: fixed
+        top: 0
+        background-color: $black-bg
+        z-index: 99
+    .navigation__menu.active_v
+        display: flex
+
+    .navigation__links
+        display: flex
+        flex-direction: column
+        gap: 2rem
+        text-align: center
+    .navigation__link
+        letter-spacing: 1px
+        color: $gray
+        font-family: $body-font
+        font-size: 1.5rem
+        height: 40%
+        transition: all 0.4s ease
+        position: relative
+        overflow: hidden
+
+        // .glitch-letter
+        //     display: inline-block
+        //     transition: transform 0.3s
+
+        // &:hover
+        //     .glitch-letter
+        //         animation: glitchLetter 0.3s infinite alternate
+
+    // @keyframes glitchLetter
+    //     0%
+    //         transform: translateY(0)
+    //     25%
+    //         transform: translateY(-5px)
+    //     50%
+    //         transform: translateY(5px)
+    //     75% 
+    //         transform: translateY(-2px)
+    //     100% 
+    //         transform: translateY(2px)
+        
+
+    .navigation__link.active
+        text-decoration: none
+        color: $pinkish
+    .navigation__link.main-active
+        text-decoration: none
+        color: $gray
+
+    .navigation__socials
+        display: flex
+        flex-direction: row
+        gap: 1rem
+        margin: 0 auto
+        margin-top: 3rem
+        img
+            width: 1.5rem
+            height: 1.5rem
+            max-width: 100%
+            &:hover
+                fill: $white
+    @media (min-width: $lg-width)
+        .navigation__logo img
+            max-width: 90%
+        .navigation__menu
+            display: flex
+            position: fixed
+            top: 0
+            left: 0
+            right: 0
+            flex-direction: column
+            align-items: center
+            width: 20%
+            z-index: 3
+        .menu-icon
+            display: none
+        img
+            width: 50%
+            object-fit: contain

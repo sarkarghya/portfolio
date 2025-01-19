@@ -1,0 +1,317 @@
+@use  "../../core-ui/_base"
+
+//PORTFOLIO
+.landing__portfolio, .portfolio
+    display: flex
+    flex-direction: column
+    // gap: 2rem
+    align-items: center
+    .portfolio-content
+        // padding: 1.5rem
+    h2
+        font-size: 2.5rem
+        letter-spacing: 1px
+    p
+        font-size: 1.5rem
+    @media (min-width: base.$sm-width)
+        .portfolio-content
+            padding: 2rem
+        h2
+            font-size: 4rem
+.portfolio
+    grid-column: span 3
+    padding: 2rem
+
+// PROJECTS GRID
+// .projects-grid
+//   display: grid
+//   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+//   gap: 2rem
+//   padding: 2rem
+
+//   &__project
+//     background-color: rgba(255, 255, 255, 0.05)
+//     border-radius: 12px
+//     overflow: hidden
+//     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+//     transition: all 0.3s ease
+
+//     &:hover
+//       box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2)
+
+//   &__image-container
+//     position: relative
+//     overflow: hidden
+
+//   &__cover
+//     width: 100%
+//     height: 200px
+//     object-fit: cover
+//     transition: transform 0.3s ease
+
+//   &__overlay
+//     position: absolute
+//     top: 0
+//     left: 0
+//     right: 0
+//     bottom: 0
+//     background: rgba(0, 0, 0, 0.7)
+//     display: flex
+//     align-items: center
+//     justify-content: center
+//     opacity: 0
+//     transition: opacity 0.3s ease
+
+//   &__title
+//     color: #fff
+//     font-size: 1.5rem
+//     text-align: center
+//     padding: 1rem
+
+//   &__content
+//     padding: 1.5rem
+
+//   &__description
+//     font-size: 1rem
+//     color: #e0e0e0
+//     margin-bottom: 1rem
+
+//   &__stack
+//     display: flex
+//     flex-wrap: wrap
+//     gap: 0.5rem
+//     margin-bottom: 1rem
+
+//   &__stack-item
+//     font-size: 0.8rem
+//     padding: 0.3rem 0.6rem
+//     background-color: rgba(255, 255, 255, 0.1)
+//     color: #fff
+//     border-radius: 20px
+
+//   &__links
+//     display: flex
+//     justify-content: space-between
+
+//   &__link
+//     display: flex
+//     align-items: center
+//     gap: 0.5rem
+//     color: #64ffda
+//     text-decoration: none
+//     font-size: 0.9rem
+//     transition: color 0.3s ease
+
+//     &:hover
+//       color: #fff
+
+//   @media (min-width: base.$md-width)
+//     grid-template-columns: repeat(2, 1fr)
+
+//   @media (min-width: base.$lg-width)
+//     grid-template-columns: repeat(3, 1fr)
+
+.projects-grid
+  display: grid
+  gap: 2rem
+  padding: 1.5rem
+  max-width: 1200px
+  margin: 0 auto
+
+  p
+    font-size: 1.2rem
+
+@media (min-width: base.$md-width)
+  .projects-grid
+    padding: 3rem
+
+.project-card
+  display: grid
+  gap: 1.5rem
+  position: relative
+  background: rgba(255, 255, 255, 0.03)
+  border-radius: 12px
+  backdrop-filter: blur(10px)
+  padding: 1.5rem
+  min-height: 300px
+  transition: all 0.3s ease
+
+  &:hover
+    background: rgba(255, 255, 255, 0.05)
+    transform: translateY(-5px)
+
+@media (min-width: base.$lg-width)
+  .project-card
+    grid-template-columns: 1fr 0.8fr
+
+    &:nth-child(even)
+      grid-template-columns: 0.8fr 1fr
+
+      .project-content
+        order: 2
+
+@media (max-width: base.$md-width)
+  .project-card
+    grid-template-columns: 1fr
+    min-height: auto
+    padding: 1.25rem
+
+
+.project-image-container
+  width: 100%
+  height: 100%
+  overflow: hidden
+  border-radius: 8px
+  position: relative
+
+.project-image
+  width: 100%
+  height: 100%
+  object-fit: cover
+  align-self: center
+  transition: all 0.1s ease
+  filter: grayscale(60%)
+
+  &:hover
+    filter: grayscale(0%)
+    transform: scale(1.2)
+
+
+@media (max-width: base.$md-width)
+  .project-image
+    display: none
+
+.project-content
+  display: flex
+  flex-direction: column
+  gap: 0rem
+
+.project-header
+  display: flex
+  flex-direction: column
+  gap: 0.6rem
+  margin-bottom: 0rem
+
+.project-overline
+  margin: 0
+  font: base.$title-font
+  color: #00eeff9f
+  font-size: 0.6rem
+  font-weight: 800
+  letter-spacing: 0.1em
+  text-transform: uppercase
+
+.project-title
+  font-size: 2rem
+  margin: 0
+  background: base.$pinkish
+  background-clip: text
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+  position: relative
+  text-decoration: underline 0.15em
+    
+
+//   &::after
+//     content: ''
+//     position: absolute
+//     bottom: -4px
+//     left: 0
+//     width: 0
+//     height: 2px
+//     background: base.$pinkish
+//     transition: width 0.3s ease
+
+//   &:hover::after
+//     width: 100%
+
+@media (max-width: base.$md-width)
+  .project-title
+    font-size: 1.2rem
+
+.project-description
+  color: base.$white
+  line-height: 1.4
+
+// .tech-stack
+//   display: flex
+//   flex-wrap: wrap
+//   gap: 0.5rem
+
+// .tech-item
+//   padding: 0.3rem 0.6rem
+//   background: rgba(255, 255, 255, 0.06)
+//   border-radius: 20px
+//   font-size: 0.7rem
+//   color: var(--text-light)
+//   transition: all 0.3s ease
+
+//   &:hover
+//     background: rgba(255, 255, 255, 0.1)
+//     transform: translateY(-2px)
+
+.project-links
+  display: flex
+  margin-top: auto
+
+  a
+    opacity: 0.7
+    transition: all 0.3s ease
+
+    &:hover
+      opacity: 1
+      transform: translateY(-2px)
+
+  img
+    width: 1.5rem
+    height: 1.5rem
+
+.collaborators, .publication
+  margin: 0.5rem 0
+  color: base.$white
+
+.collaborators h4, .publication h4
+  font-family: base.$codingfont
+  font-size: 0.8rem
+  margin-bottom: 0.3rem
+  color: base.$white
+  text-transform: uppercase
+  letter-spacing: 0.05em
+  opacity: 0.8
+
+.collaborator-list
+  display: flex
+  flex-wrap: wrap
+  gap: 0.5rem
+  font-size: 0.85rem
+  line-height: 1.4
+  font-family: base.$codingfont
+
+.collaborator 
+  span
+    color: base.$white
+    opacity: 0.7
+    
+  
+  a
+    display: inline-block
+    color: base.$white
+    text-decoration: none
+    padding: 0.2rem 0.6rem
+    background: rgba(255, 255, 255, 0.1)
+    border-radius: 4px
+    transition: all 0.2s ease
+    
+    &:hover
+      background: rgba(255, 255, 255, 0.2)
+    //   transform: translateY(-2px)
+      opacity: 1
+
+.publication 
+  p
+    font-size: 0.85rem
+    font-style: italic
+    color: base.$white
+    opacity: 0.7
+
+
