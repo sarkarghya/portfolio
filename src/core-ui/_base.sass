@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Squada+One&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;300;400&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap')
+//Breakpoints
+$sm-width: 576px
+$md-width: 768px
+$lg-width: 992px
+$xl-width: 1200px
+$xxl-with: 1400px
+//Font
+$title-font: 'DM Sans', sans-serif
+$body-font: 'Inter', serif
+$codingfont: 'JetBrains Mono', monospace
+$logo-font: 'Squada One', sqauda
+//Colors
+$black-bg: #1b1b1e
+$pinkish: #00eeff
+$white: #fff
+$gray: #8d8d8d
+$darkgray: #2b2b2b
+//Hide Scrollbar
+
+html::-webkit-scrollbar
+    width: 0 !important
+    -ms-overflow-style: none
+    scrollbar-width: none
+
+body
+    background-color: $black-bg
+    position: relative
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+img
+    display: block
+
+a
+    text-decoration: none
+    cursor: pointer
+h1, h2
+    margin: 0
+    position: relative
+h3, h4
+    font-family: $body-font
+ul, li, ol
+    padding: 0
+    margin: 0
+li
+    counter-increment: li
+    display: list-item
+button
+    cursor: pointer
+
+p
+    font-family: $body-font
+    font-weight: 100
+//BASICS
+.title-font
+    font-family: $title-font
+    font-weight: 500
+.body-font
+    font-optical-sizing: auto
+    font-weight: 900
+    font-style: normal
+.hero-font
+    font-family: $title-font
+.white-text
+    color: $white
+.pink-text
+    color: $pinkish
+.gray-text
+    color: $gray
